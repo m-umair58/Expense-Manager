@@ -22,6 +22,17 @@ export interface MonthlyExpense {
   updatedAt: string;
 }
 
+export interface MonthStats {
+  daysInMonth: number;
+  daysElapsed: number;
+  isCurrentMonth: boolean;
+  dailyAverage: number;
+  momChangePercent: number | null;
+  momChangeAmount: number | null;
+  prevGrandTotal: number | null;
+  categoryPercentages: Record<string, number>;
+}
+
 export interface Summary {
   month: number;
   year: number;
@@ -31,6 +42,8 @@ export interface Summary {
   baselineCount: number;
   monthlyCount: number;
   categoryBreakdown: Record<string, number>;
+  previousMonth?: Summary;
+  stats?: MonthStats;
 }
 
 export interface ExpenseFormData {
