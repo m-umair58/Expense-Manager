@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import BaselineExpense from "@/models/BaselineExpense";
 
+export const dynamic = "force-dynamic";
+
 type RouteContext = { params: { id: string } };
 
 export async function PUT(request: NextRequest, { params }: RouteContext) {
